@@ -75,6 +75,7 @@ echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 cd /var/www/html
 sudo git clone https://github.com/CdeCASA/Projecte.git
 cd /home/$USER
+sleep2
 clear
 
 #############
@@ -95,14 +96,16 @@ echo "A continuacion vamos a crear un usuario, este usuario será el que podra a
 echo
 echo
 echo
-echo "Dame el nombre del usuario a crear"
+echo "Dame el nombre del usuario a crear:"
 read usuario
 sudo htpasswd -c /etc/apache2/.segura $usuario
+sudo echo 'www-data ALL=NOPASSWD:ALL' >> /etc/sudoers
 
 ###############
 
 sudo rm /var/www/html/index.html
 sudo chmod -R 777 /var/www/html/Projecte
+sudo chown -R www-data:www-data /var/www/html/Projecte
 sudo echo '127.0.0.1    panelcontrol.com' >> /etc/hosts
 ################
 
