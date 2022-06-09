@@ -73,7 +73,7 @@ echo "+                                                                     +"
 echo "+                                                                     +"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 sleep 2
-sudo apt install ufw-y
+sudo apt install ufw -y
 sudo ufw enable
 sleep 2
 clear
