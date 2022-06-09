@@ -67,6 +67,20 @@ echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "+                                                                     +"
 echo "+                                                                     +"
 echo "+                                                                     +"
+echo "+                 Instalación de Ufw                                  +"
+echo "+                                                                     +"
+echo "+                                                                     +"
+echo "+                                                                     +"
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+sleep 2
+sudo apt install ufw-y
+sudo ufw enable
+sleep 2
+clear
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+                                                                     +"
+echo "+                                                                     +"
+echo "+                                                                     +"
 echo "+                 Descargamos de Github                               +"
 echo "+                                                                     +"
 echo "+                                                                     +"
@@ -99,7 +113,11 @@ echo
 echo "Dame el nombre del usuario a crear:"
 read usuario
 sudo htpasswd -c /etc/apache2/.segura $usuario
+
+################
+
 sudo echo 'www-data ALL=NOPASSWD:ALL' >> /etc/sudoers
+sudo chmod 777 /etc/netplan
 
 ###############
 
